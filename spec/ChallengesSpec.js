@@ -91,3 +91,18 @@ describe("08-timeConversion", function() {
     expect(timeConversion('10:01:01PM')).toEqual('22:01:01')
   })
 })
+
+describe("09-gradingStudents", function() {
+  it("works for grades lower than 38", function() {
+    expect(gradingStudents([33])).toEqual([33])
+  })
+  it("works for rounded grades", function() {
+    expect(gradingStudents([38])).toEqual([40])
+  })
+  it("works for non-rounded grades", function() {
+    expect(gradingStudents([67])).toEqual([67])
+  })
+  it("works for multiple grades", function() {
+    expect(gradingStudents([33,73,38,67])).toEqual([33,75,40,67])
+  })
+})
