@@ -560,7 +560,6 @@ function kangaroo(x1, v1, x2, v2) {
   if(v2 > v1 && x2 !== x1) {
     return 'NO'
   } else if(x1 === x2) {
-    console.log(0)
     return 'YES'
   } else {
     let intersectPoint = 0
@@ -571,7 +570,83 @@ function kangaroo(x1, v1, x2, v2) {
       intersectPoint ++
       if (x1 === x2) intersected = true      
     }
-    console.log(intersectPoint)
     return 'YES'
   }
 }
+
+/*-----------------------------------------------------------------------------
+Challenge: 11 - breakingRecords
+
+Difficulty - Easy
+
+Maria plays college basketball and wants to go pro. Each season she maintains a record of her play. She tabulates the number of times she breaks her season record for most points and least points in a game. Points scored in the first game establish her record for the season, and she begins counting from there.
+
+Example
+
+Scores are in the same order as the games played. She tabulates her results as follows:
+
+                                     Count
+    Game  Score  Minimum  Maximum   Min Max
+     0      12     12       12       0   0
+     1      24     12       24       0   1
+     2      10     10       24       1   1
+     3      24     10       24       1   1
+Given the scores for a season, write a function named breakingRecords to determine the number of times Maria breaks her records for most and least points scored during the season.  
+
+Sample Input 0
+[10,5,20,20,4,5,2,25,1]
+
+Sample Output 0
+[2,4]
+
+Explanation 0
+
+She broke her best record twice and her worst record four times, so we return [2,4] as our answer. Note that she did not break her record for best score when she tied her current record, as her score during that game was not strictly greater than her best record at the time.
+
+Sample Input 1
+[3,4,21,36,10,28,35,5,24,42]
+
+Sample Output 1
+[4,0]
+
+Explanation 1
+
+She broke her best record four times and her worst record zero times (no score during the season was lower than the one she earned during her first game), so we return [4,0] as our answer.
+
+-----------------------------------------------------------------------------*/
+// Your solution for 11- here:
+function breakingRecords(scores){
+  let min = scores[0];
+  let max = scores[0];
+
+  let minWinning = 0;
+  let maxWinning = 0;
+  for(score in scores){
+    if(scores[score] > max ){
+      max = scores[score];
+      maxWinning++; 
+    }else if (scores[score] < min){
+      min = scores[score];
+      minWinning ++;
+    }
+  }
+  return [maxWinning, minWinning]
+}
+
+// function breakingRecords(scores) {
+//   let min = scores[0]
+//   let max = scores[0]
+//   let minCount = 0
+//   let maxCount = 0
+//   scores.forEach(score => {
+//     if (score > max) {
+//       max = score
+//       maxCount++
+//     }
+//     if (score < min) {
+//       min = score
+//       minCount++
+//     }
+//   })
+//   return [maxCount, minCount]
+// }

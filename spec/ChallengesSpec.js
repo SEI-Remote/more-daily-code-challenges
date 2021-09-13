@@ -116,3 +116,13 @@ describe("10-kangaroo", function() {
     expect(kangaroo(0,2,5,3)).toEqual('NO')
   })
 })
+
+describe("11-breakingRecords", function() {
+  it("returns correct result", function() {
+    expect(breakingRecords([3,4,21,36,10,28,35,5,24,42])).toEqual([4,0])
+    expect(breakingRecords([10,5,20,20,4,5,2,25,1])).toEqual([2,4])
+  })
+  it("returns an array", function() {
+    expect(Array.isArray(breakingRecords([1,2,3,4,5]))).toBe(true)
+  })
+})
