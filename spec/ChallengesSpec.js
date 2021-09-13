@@ -33,3 +33,17 @@ describe("03-diagonalDifference", function() {
     expect(diagonalDifference([[11,2,4],[4,-5,6],[10,8,-12]])).toEqual(15)
   })
 })
+
+describe("04-plusMinus", function() {
+  it("returns an array", function() {
+    expect(Array.isArray(plusMinus([1,1,0,-1,-1]))).toBe(true)
+  })
+  it("returns correct ratios", function() {
+    expect(plusMinus([1,1,0,-1,-1])).toEqual(['0.400000', '0.400000', '0.200000'])
+  })
+  it("correct number of places after decimal", function() {
+    expect(plusMinus([1,1,1,1,1])[0].split('.')[1].length).toEqual(6)
+    expect(plusMinus([1,1,1,1,1])[1].split('.')[1].length).toEqual(6)
+    expect(plusMinus([1,1,1,1,1])[2].split('.')[1].length).toEqual(6)
+  })
+})

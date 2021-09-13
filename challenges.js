@@ -212,3 +212,37 @@ function diagonalDifference(matrix) {
   }
   return Math.abs(sumDiagonalLR - sumDiagonalRL)
 }
+
+/*-----------------------------------------------------------------------------
+Challenge: 04 - plusMinus
+
+Difficulty - Easy
+
+Given an array of integers, calculate the ratios of its elements that are positive, negative, and zero. Create an array to hold the decimal value of each fraction, accurate to 6 places after the decimal.
+
+Example
+arr = [1,1,0,-1,-1]
+
+There are 5 elements, two positive, two negative and one zero. Their ratios are 2/5 (0.400000), 2/5 (0.400000), and 1/5 (0.200000).
+
+The function plusMinus should return an array like this:
+
+[0.400000, 0.400000, 0.200000]
+
+-----------------------------------------------------------------------------*/
+// Your solution for 04- here:
+
+function plusMinus(nums) {
+  let positiveNum = 0
+  let negeativeNum = 0
+  let zero = 0
+  for (let i = 0; i < nums.length; i++) {
+    if (nums[i] > 0) {
+      positiveNum += 1
+    } else if (nums[i] < 0){
+      negeativeNum += 1
+    } else zero += 1
+    
+  }
+  return [(positiveNum / nums.length).toFixed(6), (negeativeNum/ nums.length).toFixed(6), (zero/nums.length).toFixed(6)]
+}
