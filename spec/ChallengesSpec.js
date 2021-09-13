@@ -79,3 +79,15 @@ describe("07-birthdayCakeCandles", function() {
     expect(birthdayCakeCandles([3,2,1,3,3])).toEqual(3)
   })
 })
+
+describe("08-timeConversion", function() {
+  it("works with 12AM edge case", function() {
+    expect(timeConversion('12:01:01AM')).toEqual('00:01:01')
+  })
+  it("works for AM case", function() {
+    expect(timeConversion('02:01:01AM')).toEqual('02:01:01')
+  })
+  it("works for PM case", function() {
+    expect(timeConversion('10:01:01PM')).toEqual('22:01:01')
+  })
+})

@@ -425,3 +425,35 @@ function birthdayCakeCandles(arr){
 //   })
 //   return numTallest
 // }
+
+/*-----------------------------------------------------------------------------
+Challenge: 08 - timeConversion
+
+Difficulty - Easy
+
+Given a time in 12-hour AM/PM format, write a function named timeConversion to convert it to military (24-hour) time.
+
+Note:
+- 12:00:00AM on a 12-hour clock is 00:00:00 on a 24-hour clock.
+- 12:00:00PM on a 12-hour clock is 12:00:00 on a 24-hour clock.
+
+Example
+s = '12:01:00PM'
+Result: '12:01:00'.
+
+s = '12:01:00AM'
+Result: '00:01:00'.
+
+s = '07:05:45PM'
+Result: '19:05:45'
+-----------------------------------------------------------------------------*/
+// Your solution for 08- here:
+function timeConversion(time){
+  let amOrPm = time.slice(-2)
+  let hour = parseInt(time.slice(0,2))
+  if (amOrPm == 'AM' && hour == 12)
+    return `00${time.slice(2,8)}`
+  if (amOrPm == 'AM')
+    return time.slice(0,8)
+  return `${12+hour}${time.slice(2,8)}`
+}
