@@ -106,3 +106,13 @@ describe("09-gradingStudents", function() {
     expect(gradingStudents([33,73,38,67])).toEqual([33,75,40,67])
   })
 })
+
+
+describe("10-kangaroo", function() {
+  it("works for a positive result", function() {
+    expect(kangaroo(0,3,4,2)).toEqual('YES')
+  })
+  it("works for a negative result", function() {
+    expect(kangaroo(0,2,5,3)).toEqual('NO')
+  })
+})
