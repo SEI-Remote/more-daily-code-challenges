@@ -47,3 +47,15 @@ describe("04-plusMinus", function() {
     expect(plusMinus([1,1,1,1,1])[2].split('.')[1].length).toEqual(6)
   })
 })
+
+describe("05-staircase", function() {
+  it("returns an array", function() {
+    expect(Array.isArray(staircase(6))).toBe(true)
+  })
+  it("returned array is the correct height", function() {
+    expect(staircase(6).length).toEqual(6)
+  })
+  it("returns correct result", function() {
+    expect(staircase(6)).toEqual(['     #', '    ##', '   ###', '  ####', ' #####', '######'])
+  })
+})

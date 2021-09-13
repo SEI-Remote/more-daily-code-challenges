@@ -246,3 +246,61 @@ function plusMinus(nums) {
   }
   return [(positiveNum / nums.length).toFixed(6), (negeativeNum/ nums.length).toFixed(6), (zero/nums.length).toFixed(6)]
 }
+
+/*-----------------------------------------------------------------------------
+Challenge: 05 - staircase
+
+Difficulty - Easy
+
+This is a staircase of size n = 4:
+
+[
+'   #',
+'  ##',
+' ###',
+'####',
+]
+
+Its base and height are both equal to n. It is drawn using # symbols and spaces. The last line is not preceded by any spaces.
+
+Write a function named staircase that returns a staircase of size n.
+
+Input Format
+
+A single integer n denoting the size of the staircase.
+
+Output Format
+
+Return an array containing a staircase of size n using # symbols and spaces.
+
+Note: The last line must have 0 spaces in it.
+
+Sample Input
+6 
+
+Sample Output
+
+[
+'     #',
+'    ##',
+'   ###',
+'  ####',
+' #####',
+'######'
+]
+
+Explanation
+
+The staircase is right-aligned, composed of # symbols and spaces, and has a height 6 and width of 6.
+
+-----------------------------------------------------------------------------*/
+// Your solution for 05- here:
+
+function staircase(n){
+  let stairs = []
+  for (let i = 1; i <= n; i++){
+    stairs.push(' '.repeat(n-i) + '#'.repeat(i))
+  }
+  return stairs
+}
+
