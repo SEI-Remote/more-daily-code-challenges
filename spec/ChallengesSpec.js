@@ -69,3 +69,13 @@ describe("06-miniMaxSum", function() {
     expect(miniMaxSum([5,4,1,2,3])).toEqual([10,14])
   })
 })
+
+
+describe("07-birthdayCakeCandles", function() {
+  it("returns an integer", function() {
+    expect(typeof birthdayCakeCandles([3,2,1,3])).toBe('number')
+  })
+  it("returns correct result", function() {
+    expect(birthdayCakeCandles([3,2,1,3,3])).toEqual(3)
+  })
+})

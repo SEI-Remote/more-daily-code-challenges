@@ -376,3 +376,52 @@ function miniMaxSum(array) {
 //   return [min, max]
 // } 
 
+
+/*-----------------------------------------------------------------------------
+Challenge: 07 - birthdayCakeCandles
+
+Difficulty - Easy
+
+You are in charge of the cake for a child's birthday. You have decided the cake will have one candle for each year of their total age. They will only be able to blow out the tallest of the candles.  Write a function named birthdayCakeCandles that returns the count of tallest candles.
+
+Example
+
+[4,4,1,3]
+
+The maximum height candles are 4 units high. There are 2 of them, so return 2.
+
+Input Format
+
+An array of integers
+
+Sample Input
+[3,2,1,3]
+
+Sample Output
+2
+
+Explanation
+
+Candle heights are 3, 2, 1, and 3. The tallest candles are 3 units, and there are 2 of them.
+
+-----------------------------------------------------------------------------*/
+// Your solution for 07- here:
+function birthdayCakeCandles(arr){
+  canHeight = Math.max(...arr)
+  let totalCan = arr.filter((c)=> c == canHeight)  
+  return totalCan.length
+}
+
+// function birthdayCakeCandles(candles) {
+//   let tallestCandle = 0
+//   let numTallest = 0
+//   candles.forEach(candle => {
+//     if (candle === tallestCandle) {
+//       numTallest++
+//     } else if (candle > tallestCandle) {
+//       tallestCandle = candle
+//       numTallest = 1
+//     }
+//   })
+//   return numTallest
+// }
