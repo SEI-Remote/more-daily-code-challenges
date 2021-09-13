@@ -59,3 +59,13 @@ describe("05-staircase", function() {
     expect(staircase(6)).toEqual(['     #', '    ##', '   ###', '  ####', ' #####', '######'])
   })
 })
+
+
+describe("06-miniMaxSum", function() {
+  it("returns an array", function() {
+    expect(Array.isArray(miniMaxSum([1,2,3,4,5]))).toBe(true)
+  })
+  it("returns correct result", function() {
+    expect(miniMaxSum([5,4,1,2,3])).toEqual([10,14])
+  })
+})
