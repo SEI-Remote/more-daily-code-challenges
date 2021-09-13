@@ -21,3 +21,15 @@ describe("02-compareTriplets", function() {
     expect(compareTriplets([17,28,30],[99,16,8])).toEqual([2,1])
   })
 })
+
+describe("03-diagonalDifference", function() {
+  it("returns a number", function() {
+    expect(typeof diagonalDifference([[11,2,4],[4,5,6],[10,8,-12]])).toBe('number')
+  })
+  it("works with positive numbers", function() {
+    expect(diagonalDifference([[11,2,4],[4,5,6],[10,8,12]])).toEqual(9)
+  })
+  it("works with negative numbers", function() {
+    expect(diagonalDifference([[11,2,4],[4,-5,6],[10,8,-12]])).toEqual(15)
+  })
+})
