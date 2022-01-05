@@ -30,35 +30,6 @@ Only one valid answer exists.
 
 -----------------------------------------------------------------------------*/
 // Your solution for 01- here:
-// [0,1,3,7,5]
-// i loop 0
-  // j loop 1, 3, 7, 5
-// i loop 1
-  // j loop 3, 7, 5
-// target = 4 
-// 1,2
-function twoSum(nums,target){
-  for( let i = 0; i< nums.length; i++ ){
-    for( let j=i+1; j< nums.length; j++){
-      if (nums[i]+nums[j] === target){ 
-        return [i,j]
-      }
-    }   
-  }
-}
-
-// [0,1,3,7,5]
-// target 4
-function twoSum(nums, target) {
-  let vals = {}
-  for (let i=0; i< nums.length; i++) {
-    if (target - nums[i] in vals){
-      return [vals[target-nums[i]], i]
-    } else {
-      vals[nums[i]] = i
-    }
-  }
-}
 
 
 /*-----------------------------------------------------------------------------
@@ -83,7 +54,7 @@ Example
 
 a = [1, 2, 3]
 b = [3, 2, 1]
-For elements *0*, Bob is awarded a point because a[0] .
+For elements *0*, Bob is awarded a point because b[0] > a[0].
 For the equal elements a[1] and b[1], no points are earned.
 Finally, for elements 2, a[2] > b[2] so Alice receives a point.
 The return array is [1, 1] with Alice's score first and Bob's second.
@@ -102,7 +73,7 @@ Sample Input 0
 3 6 10
 
 Sample Output 0
-1 1
+[1,1]
 
 Explanation 0
 In this example, let's compare each individual score:
@@ -118,7 +89,7 @@ Sample Input 1
 99 16 8
 
 Sample Output 1
-2 1
+[2,1]
 
 Explanation 1
 
@@ -136,21 +107,6 @@ Result:
 -----------------------------------------------------------------------------*/
 // Your solution for 02- here:
 
-
-function compareTriplets(a, b) {
-  let bobScore = 0
-  let aliceScore = 0
-
-  for(let i = 0; i < a.length; i++){
-    // comparing array a index 0 against array b index of 0 
-    if (a[i] > b[i]) {
-      aliceScore ++
-    } else if (a[i] < b[i]) {
-      bobScore ++
-    }
-  }
-  return [aliceScore, bobScore]
-}
 
 /*-----------------------------------------------------------------------------
 
@@ -203,16 +159,6 @@ Difference: |4 - 19| = 15
 -----------------------------------------------------------------------------*/
 // Your solution for 03- here:
 
-function diagonalDifference(matrix) {
-  let sumDiagonalLR = 0
-  let sumDiagonalRL = 0
-  for(let i = 0; i < matrix.length; i ++) {
-    sumDiagonalLR += matrix[i][i]
-    sumDiagonalRL += matrix[i][matrix.length - (i + 1)]
-  }
-  return Math.abs(sumDiagonalLR - sumDiagonalRL)
-}
-
 /*-----------------------------------------------------------------------------
 Challenge: 04 - plusMinus
 
@@ -232,20 +178,6 @@ The function plusMinus should return an array like this:
 -----------------------------------------------------------------------------*/
 // Your solution for 04- here:
 
-function plusMinus(nums) {
-  let positiveNum = 0
-  let negeativeNum = 0
-  let zero = 0
-  for (let i = 0; i < nums.length; i++) {
-    if (nums[i] > 0) {
-      positiveNum += 1
-    } else if (nums[i] < 0){
-      negeativeNum += 1
-    } else zero += 1
-    
-  }
-  return [(positiveNum / nums.length).toFixed(6), (negeativeNum/ nums.length).toFixed(6), (zero/nums.length).toFixed(6)]
-}
 
 /*-----------------------------------------------------------------------------
 Challenge: 05 - staircase
@@ -296,13 +228,6 @@ The staircase is right-aligned, composed of # symbols and spaces, and has a heig
 -----------------------------------------------------------------------------*/
 // Your solution for 05- here:
 
-function staircase(n){
-  let stairs = []
-  for (let i = 1; i <= n; i++){
-    stairs.push(' '.repeat(n-i) + '#'.repeat(i))
-  }
-  return stairs
-}
 
 /*-----------------------------------------------------------------------------
 Challenge: 06 - miniMaxSum
@@ -338,44 +263,6 @@ Sum everything except 5, the sum is 10.
 -----------------------------------------------------------------------------*/
 // Your solution for 06- here:
 
-function miniMaxSum(array) {
-  let minNum = Math.min(...array)
-  let maxNum = Math.max(...array)
-  let sum = 0
-  array.forEach(num => {
-    sum += num
-  })
-  return [sum-maxNum, sum-minNum] 
-}
-// function miniMaxSum(array) {
-//   let withOutFive = array[0] + array[1] + array[2] + array[3];
-//   let withOutFour = array[0] + array[1] + array[2] + array[4];
-//   let withOutThree = array[0] + array[1] + array[3] + array[4];
-//   let withOutTwo = array[0] + array[2] + array[3] + array[4];
-//   let withOutOne = array[4] + array[1] + array[2] + array[3];
-
-//   let longArray = [withOutFive, withOutFour, withOutThree, withOutTwo, withOutOne];
-//   console.log(longArray);
-//   console.log();
-//   return [Math.min(...longArray), Math.max(...longArray)]
-// }
-
-// function miniMaxSum(arr) {
-//   let max = -Infinity;
-//   let min = Infinity;
-//   for (let i = 0; i < arr.length; i++) {
-//     let sum = 0;
-//     for (let j = 0; j < arr.length; j++) {
-//       if ( i != j ) {
-//         sum += arr[j];
-//       }
-//     }
-//     if (sum < min) min = sum;
-//     if (sum > max) max = sum;
-//   }
-//   return [min, max]
-// } 
-
 
 /*-----------------------------------------------------------------------------
 Challenge: 07 - birthdayCakeCandles
@@ -406,25 +293,7 @@ Candle heights are 3, 2, 1, and 3. The tallest candles are 3 units, and there ar
 
 -----------------------------------------------------------------------------*/
 // Your solution for 07- here:
-function birthdayCakeCandles(arr){
-  canHeight = Math.max(...arr)
-  let totalCan = arr.filter((c)=> c == canHeight)  
-  return totalCan.length
-}
 
-// function birthdayCakeCandles(candles) {
-//   let tallestCandle = 0
-//   let numTallest = 0
-//   candles.forEach(candle => {
-//     if (candle === tallestCandle) {
-//       numTallest++
-//     } else if (candle > tallestCandle) {
-//       tallestCandle = candle
-//       numTallest = 1
-//     }
-//   })
-//   return numTallest
-// }
 
 /*-----------------------------------------------------------------------------
 Challenge: 08 - timeConversion
@@ -448,15 +317,6 @@ s = '07:05:45PM'
 Result: '19:05:45'
 -----------------------------------------------------------------------------*/
 // Your solution for 08- here:
-function timeConversion(time){
-  let amOrPm = time.slice(-2)
-  let hour = parseInt(time.slice(0,2))
-  if (amOrPm == 'AM' && hour == 12)
-    return `00${time.slice(2,8)}`
-  if (amOrPm == 'AM')
-    return time.slice(0,8)
-  return `${12+hour}${time.slice(2,8)}`
-}
 
 
 /*-----------------------------------------------------------------------------
@@ -498,15 +358,6 @@ Student 4 received a grade below 38, so the grade will not be modified and the s
 -----------------------------------------------------------------------------*/
 // Your solution for 09- here:
 
-function gradingStudents(nums) {
-  for(let i = 0; i < nums.length; i ++) {
-    if(nums[i] >= 38 && nums[i] % 5 >= 3) {
-      let diff = (nums[i] % 5) - 1
-      nums[i] = diff + nums[i]
-    }
-  }
-  return nums
-}
 
 /*-----------------------------------------------------------------------------
 Challenge: 10 - kangaroo
@@ -556,23 +407,6 @@ The second kangaroo has a starting location that is ahead (further along the num
 -----------------------------------------------------------------------------*/
 // Your solution for 10- here:
 
-function kangaroo(x1, v1, x2, v2) {
-  if(v2 > v1 && x2 !== x1) {
-    return 'NO'
-  } else if(x1 === x2) {
-    return 'YES'
-  } else {
-    let intersectPoint = 0
-    let intersected = false
-    while(intersected === false) {
-      x1 += v1
-      x2 += v2
-      intersectPoint ++
-      if (x1 === x2) intersected = true      
-    }
-    return 'YES'
-  }
-}
 
 /*-----------------------------------------------------------------------------
 Challenge: 11 - breakingRecords
@@ -585,12 +419,12 @@ Example
 
 Scores are in the same order as the games played. She tabulates her results as follows:
 
-                                     Count
-    Game  Score  Minimum  Maximum   Min Max
-     0      12     12       12       0   0
-     1      24     12       24       0   1
-     2      10     10       24       1   1
-     3      24     10       24       1   1
+
+Game  Score  Minimum  Maximum   Min Max
+  0      12     12       12      0   0
+  1      24     12       24      0   1
+  2      10     10       24      1   1
+  3      24     10       24      1   1
 Given the scores for a season, write a function named breakingRecords to determine the number of times Maria breaks her records for most and least points scored during the season.  
 
 Sample Input 0
@@ -615,38 +449,3 @@ She broke her best record four times and her worst record zero times (no score d
 
 -----------------------------------------------------------------------------*/
 // Your solution for 11- here:
-function breakingRecords(scores){
-  let min = scores[0];
-  let max = scores[0];
-
-  let minWinning = 0;
-  let maxWinning = 0;
-  for(score in scores){
-    if(scores[score] > max ){
-      max = scores[score];
-      maxWinning++; 
-    }else if (scores[score] < min){
-      min = scores[score];
-      minWinning ++;
-    }
-  }
-  return [maxWinning, minWinning]
-}
-
-// function breakingRecords(scores) {
-//   let min = scores[0]
-//   let max = scores[0]
-//   let minCount = 0
-//   let maxCount = 0
-//   scores.forEach(score => {
-//     if (score > max) {
-//       max = score
-//       maxCount++
-//     }
-//     if (score < min) {
-//       min = score
-//       minCount++
-//     }
-//   })
-//   return [maxCount, minCount]
-// }
