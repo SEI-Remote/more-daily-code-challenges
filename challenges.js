@@ -216,3 +216,223 @@ function diagonalDifference(array) {
 // ]))
 
 // Expected |9-13| = 4
+
+/*-----------------------------------------------------------------------------
+Challenge: 04 - plusMinus
+
+Difficulty - Easy
+
+Given an array of integers, calculate the ratios of its elements that are positive, negative, and zero. Create an array to hold the decimal value of each fraction, accurate to 6 places after the decimal.
+
+Example
+arr = [1,1,0,-1,-1]
+
+There are 5 elements, two positive, two negative and one zero. Their ratios are 2/5 (0.400000), 2/5 (0.400000), and 1/5 (0.200000).
+
+The function plusMinus should return an array like this:
+
+[0.400000, 0.400000, 0.200000]
+
+-----------------------------------------------------------------------------*/
+// Your solution for 04- here:
+
+function plusMinus(array) {
+  let p=0
+  let n=0
+  let z=0
+  for (let i =0; i<array.length; i++){
+    if (array[i]>0){
+      p++
+    }
+    if (array[i]<0){
+      n++
+    }
+    if (array[i] === 0){
+      z++
+    }
+  }
+return [(p/array.length).toFixed(6), (n/array.length).toFixed(6), (z/array.length).toFixed(6)]
+}
+
+// console.log(plusMinus([1,1,0,-1,-1]))
+
+/*-----------------------------------------------------------------------------
+Challenge: 05 - staircase
+
+Difficulty - Easy
+
+This is a staircase of size n = 4:
+
+[
+'   #',
+'  ##',
+' ###',
+'####',
+]
+
+Its base and height are both equal to n. It is drawn using # symbols and spaces. The last line is not preceded by any spaces.
+
+Write a function named staircase that returns a staircase of size n.
+
+Input Format
+
+A single integer n denoting the size of the staircase.
+
+Output Format
+
+Return an array containing a staircase of size n using # symbols and spaces.
+
+Note: The last line must have 0 spaces in it.
+
+Sample Input
+6 
+
+Sample Output
+
+[
+'     #',
+'    ##',
+'   ###',
+'  ####',
+' #####',
+'######'
+]
+
+Explanation
+
+The staircase is right-aligned, composed of # symbols and spaces, and has a height 6 and width of 6.
+
+-----------------------------------------------------------------------------*/
+// Your solution for 05- here:
+
+function staircase(num) {
+  let output = []
+  for (let i=1; i <= num; i++) {
+    output.push(' '.repeat(num-i) + '#'.repeat(i))
+  }
+  return output
+}
+
+// console.log(staircase(30))
+
+/*-----------------------------------------------------------------------------
+Challenge: 06 - miniMaxSum
+
+Difficulty - Easy
+
+Given five positive integers, find the minimum and maximum values that can be calculated by summing exactly four of the five integers. Then print the respective minimum and maximum values within an array.
+
+Example:
+arr = [1,3,5,7,9]
+
+The minimum sum is 1 + 3 + 5 + 7 = 16 and the maximum sum is 3 + 5 + 7 + 9 = 24 . The function returns [16,24].
+
+Input Format:
+An array of 5 integers.
+
+Sample Input
+[1,2,3,4,5]
+
+Sample Output
+[10,14]
+
+Explanation
+
+The numbers are 1, 2, 3, 4, and 5. Calculate the following sums using four of the five integers:
+
+Sum everything except 1, the sum is 14.
+Sum everything except 2, the sum is 13.
+Sum everything except 3, the sum is 12.
+Sum everything except 4, the sum is 11.
+Sum everything except 5, the sum is 10.
+
+-----------------------------------------------------------------------------*/
+// Your solution for 06- here:
+// Optimal:
+function miniMaxSum(array) {
+  let minNum = Math.min(...array)
+  let maxNum = Math.max(...array)
+  let sum = 0
+  array.forEach(num => {
+    sum += num
+  })
+  return [sum-maxNum, sum-minNum] 
+}
+
+
+// function miniMaxSum(array) {
+//   let withOutFive = array[0] + array[1] + array[2] + array[3];
+//   let withOutFour = array[0] + array[1] + array[2] + array[4];
+//   let withOutThree = array[0] + array[1] + array[3] + array[4];
+//   let withOutTwo = array[0] + array[2] + array[3] + array[4];
+//   let withOutOne = array[4] + array[1] + array[2] + array[3];
+
+//   let longArray = [withOutFive, withOutFour, withOutThree, withOutTwo, withOutOne];
+//   return [Math.min(...longArray), Math.max(...longArray)]
+// }
+
+// function miniMaxSum(arr) {
+//   let max = -Infinity;
+//   let min = Infinity;
+//   for (let i = 0; i < arr.length; i++) {
+//     let sum = 0;
+//     for (let j = 0; j < arr.length; j++) {
+//       if ( i != j ) {
+//         sum += arr[j];
+//       }
+//     }
+//     if (sum < min) min = sum;
+//     if (sum > max) max = sum;
+//   }
+//   return [min, max]
+// } 
+
+/*-----------------------------------------------------------------------------
+Challenge: 07 - birthdayCakeCandles
+
+Difficulty - Easy
+
+You are in charge of the cake for a child's birthday. You have decided the cake will have one candle for each year of their total age. They will only be able to blow out the tallest of the candles.  Write a function named birthdayCakeCandles that returns the count of tallest candles.
+
+Example
+
+[4,4,1,3]
+
+The maximum height candles are 4 units high. There are 2 of them, so return 2.
+
+Input Format
+
+An array of integers
+
+Sample Input
+[3,2,1,3]
+
+Sample Output
+2
+
+Explanation
+
+Candle heights are 3, 2, 1, and 3. The tallest candles are 3 units, and there are 2 of them.
+
+-----------------------------------------------------------------------------*/
+// Your solution for 07- here:
+
+function birthdayCakeCandles(arr) {
+  let canHeight = Math.max(...arr)
+  let numTallest = arr.filter(c => c === canHeight)
+  return numTallest.length
+}
+
+// function birthdayCakeCandles(arr){
+//   let maxcount = 0
+//   let num = Math.max(...arr)
+//   for (let i =0;i < arr.length;i++){
+//     if(arr[i] === num) {
+//       maxcount+= 1
+//     }
+//   }
+//   return maxcount
+// }
+
+// console.log(birthdayCakeCandles([4,4,1,3]));
+
