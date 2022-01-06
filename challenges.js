@@ -1,3 +1,7 @@
+function getRandomNum() {
+  return (Math.floor(Math.random()*13)+1)
+}
+// console.log(getRandomNum())
 /*-----------------------------------------------------------------------------
 Challenge: 01 - twoSum
 
@@ -31,4 +35,26 @@ Only one valid answer exists.
 -----------------------------------------------------------------------------*/
 // Your solution for 01- here:
 
+// function twoSum(nums, target) {
+//   let vals = {}
+//   for (let i=0; i < nums.length; i++) {
+//     console.log(vals, 'vals')
+//     if (target - nums[i] in vals) {
+//       return [vals[target - nums[i]], i]
+//     } else {
+//       vals[nums[i]] = i
+//     }
+//   }
+// }
 
+function twoSum(arr, int) {
+  for (let i = 0; i < arr.length; i++ ) {
+    for (let j = i+1; j < arr.length; j++) {
+      if (arr[i]+arr[j] === int) {
+        return [i,j]        
+      }
+    }
+  }
+}
+
+// console.log(twoSum([4, 5, 1, 3, 8], 11))
