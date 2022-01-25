@@ -436,3 +436,198 @@ function birthdayCakeCandles(arr) {
 
 // console.log(birthdayCakeCandles([4,4,1,3]));
 
+/*-----------------------------------------------------------------------------
+Challenge: 08 - timeConversion
+
+Difficulty - Easy
+
+Given a time in 12-hour AM/PM format, write a function named timeConversion to convert it to military (24-hour) time.
+
+Note:
+- 12:00:00AM on a 12-hour clock is 00:00:00 on a 24-hour clock.
+- 12:00:00PM on a 12-hour clock is 12:00:00 on a 24-hour clock.
+
+Example
+s = '12:01:00PM'
+Result: '12:01:00'.
+
+s = '12:01:00AM'
+Result: '00:01:00'.
+
+s = '07:05:45PM'
+Result: '19:05:45'
+-----------------------------------------------------------------------------*/
+// Your solution for 08- here:
+
+function timeConversion(time){
+  // determine AM or PM
+  let hours = (time.slice(0, 2))
+  let minutesSeconds = time.slice(2, 8)
+  let ampm = time.slice(-2)
+  // determine hour
+  // if PM return 12 + hour w/ minutes, seconds.
+    if (ampm === "PM"){
+      return (parseInt(hours) + 12+minutesSeconds)
+    } else if (ampm == "AM" && parseInt(hours) < 12) {
+      return (hours+minutesSeconds)
+      // if AM and hour < 12 return hours, minutes, seconds.
+    } else {
+      return `00${minutesSeconds}` 
+    }
+  // edge case: 12AM change hour to 00
+  // console.log(hours, minutesSeconds, ampm)
+}
+
+// timeConversion('07:05:45PM')
+
+/*-----------------------------------------------------------------------------
+Challenge: 09 - gradingStudents
+
+Difficulty - Easy
+
+HackerLand University has the following grading policy:
+
+Every student receives a grade in the inclusive range from 1 to 100.
+Any  less than 40 is a failing grade.
+Sam is a professor at the university and likes to round each student's grade according to these rules:
+
+If the difference between the grade and the next multiple of 5 is less than 3, round grade up to the next multiple of 5.
+If the value of grade is less than 38, no rounding occurs as the result will still be a failing grade.
+
+Examples
+
+grade = 84 rounds to 85 (85 - 84 is less than 3)
+grade = 29 do not round (result is less than 38)
+grade = 57 do not round (60 - 57 is 3 or higher)
+
+Given the initial value of grades for each of Sam's students, write a function named gradingStudents to return the rounded grades.
+
+Sample Input 
+
+[73,67,38,33]
+
+Sample Output 
+
+[75,67,40,33]
+
+Explanation
+
+Student 1 received a 73, and the next multiple of 5 from 73 is 75. Since 75 - 73 < 3, the student's grade is rounded to 75.
+Student 2 received a 67, and the next multiple of 5 from 67 is 70. Since 70 - 67 = 3, the grade will not be modified and the student's final grade is 67.
+Student 3 received a 38, and the next multiple of 5 from 38 is 40. Since 40 - 38 < 3, the student's grade will be rounded to 40.
+Student 4 received a grade below 38, so the grade will not be modified and the student's final grade is 33.
+-----------------------------------------------------------------------------*/
+// Your solution for 09- here:
+
+
+/*-----------------------------------------------------------------------------
+Challenge: 10 - kangaroo
+
+Difficulty - Easy
+
+You are choreographing a circus show with various animals. For one act, you are given two kangaroos on a number line ready to jump in the positive direction (i.e, toward positive infinity).
+
+The first kangaroo starts at location x1 and moves at a rate of v1 meters per jump.
+The second kangaroo starts at location x2 and moves at a rate of v2 meters per jump.
+You have to figure out a way to get both kangaroos at the same location at the same time as part of the show. If it is possible, return YES, otherwise return NO.
+
+Example
+x1 = 2
+v1 = 1
+x2 = 1
+v2 = 2
+
+After one jump, they are both at x = 3, so the answer is YES.
+
+
+Sample Input 0
+0, 3, 4, 2
+
+Sample Output 0
+YES
+
+Explanation 0
+
+The two kangaroos jump through the following sequence of locations:
+
+k1 (0, 3, 6, 9, 12)
+k2 (4, 6, 8, 10, 12)
+
+It is clear that the kangaroos meet at the same location (number 12 on the number line) after same number of jumps (4 jumps), so we print YES.
+
+Sample Input 1
+0, 2, 5, 3
+
+Sample Output 1
+NO
+
+Explanation 1
+
+The second kangaroo has a starting location that is ahead (further along the number line) of the first kangaroo's starting location (i.e., x2 > x1). Because the second kangaroo moves at a faster rate (meaning v2 > v1) and is already ahead of the first kangaroo, the first kangaroo will never be able to catch up. Thus, we print NO.
+
+-----------------------------------------------------------------------------*/
+// Your solution for 10- here:
+
+
+
+/*-----------------------------------------------------------------------------
+Challenge: 11 - breakingRecords
+
+Difficulty - Medium
+
+Maria plays college basketball and wants to go pro. Each season she maintains a record of her play. She tabulates the number of times she breaks her season record for most points and least points in a game. Points scored in the first game establish her record for the season, and she begins counting from there.
+
+Example
+
+Scores are in the same order as the games played. She tabulates her results as follows:
+
+                                     Count
+    Game  Score  Minimum  Maximum   Min Max
+     0      12     12       12       0   0
+     1      24     12       24       0   1
+     2      10     10       24       1   1
+     3      24     10       24       1   1
+Given the scores for a season, write a function named breakingRecords to determine the number of times Maria breaks her records for most and least points scored during the season.  
+
+Sample Input 0
+[10,5,20,20,4,5,2,25,1]
+
+Sample Output 0
+[2,4]
+
+Explanation 0
+
+She broke her best record twice and her worst record four times, so we return [2,4] as our answer. Note that she did not break her record for best score when she tied her current record, as her score during that game was not strictly greater than her best record at the time.
+
+Sample Input 1
+[3,4,21,36,10,28,35,5,24,42]
+
+Sample Output 1
+[4,0]
+
+Explanation 1
+
+She broke her best record four times and her worst record zero times (no score during the season was lower than the one she earned during her first game), so we return [4,0] as our answer.
+
+-----------------------------------------------------------------------------*/
+// Your solution for 11- here:
+
+function kangaroo(x1, v1, x2, v2) {
+  if ((v1 > v2 && x1 > x2) || (v2 > v1 && x2 > x1) || (v2 === v1 && x1 !== x2)) {
+    return 'NO'
+  } else if (x1 === x2) {
+    return 'YES'
+  } else {
+    let aheadKangarooX = x1 > x2 ? x1 : x2
+    let aheadKangrooV = x1 > x2 ? v1 : v2
+    let behindKangarooX = x1 < x2 ? x1 : x2
+    let behindKangarooV = x1 < x2 ? v1 : v2
+    let intersected = false
+    while (intersected === false && aheadKangarooX > behindKangarooX) {
+      aheadKangarooX += aheadKangrooV
+      behindKangarooX += behindKangarooV
+      if (aheadKangarooX === behindKangarooX) intersected = true
+    }
+    return intersected ? 'YES' : 'NO'
+  }
+}

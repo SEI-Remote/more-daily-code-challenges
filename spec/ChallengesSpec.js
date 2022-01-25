@@ -109,11 +109,23 @@ describe("09-gradingStudents", function() {
 
 
 describe("10-kangaroo", function() {
-  it("works for a positive result", function() {
-    expect(kangaroo(0,3,4,2)).toEqual('YES')
+  it("works for a faster kangaroo already ahead", function() {
+    expect(kangaroo(5,3,4,2)).toEqual('NO')
   })
-  it("works for a negative result", function() {
+  it("works for a slower kangaroo already behind", function() {
     expect(kangaroo(0,2,5,3)).toEqual('NO')
+  })
+  it("works for evenly-paced offset kangaroos", function() {
+    expect(kangaroo(1,2,2,2)).toEqual('NO')
+  })
+  it("works for kangaroos starting at the same point", function() {
+    expect(kangaroo(2,4,2,5)).toEqual('YES')
+  })
+  it("works for one kangaroo significantly out-hopping the other", function() {
+    expect(kangaroo(1,5,4,3)).toEqual('NO')
+  })
+  it("kangaroos that will meet", function() {
+    expect(kangaroo(1,5,5,3)).toEqual('YES')
   })
 })
 
