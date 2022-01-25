@@ -1,7 +1,3 @@
-function getRandomNum() {
-  return (Math.floor(Math.random()*13)+1)
-}
-console.log(getRandomNum())
 /*-----------------------------------------------------------------------------
 Challenge: 01 - twoSum
 
@@ -35,29 +31,8 @@ Only one valid answer exists.
 -----------------------------------------------------------------------------*/
 // Your solution for 01- here:
 
-// function twoSum(nums, target) {
-//   let vals = {}
-//   for (let i=0; i < nums.length; i++) {
-//     console.log(vals, 'vals')
-//     if (target - nums[i] in vals) {
-//       return [vals[target - nums[i]], i]
-//     } else {
-//       vals[nums[i]] = i
-//     }
-//   }
-// }
 
-function twoSum(arr, int) {
-  for (let i = 0; i < arr.length; i++ ) {
-    for (let j = i+1; j < arr.length; j++) {
-      if (arr[i]+arr[j] === int) {
-        return [i,j]        
-      }
-    }
-  }
-}
 
-// console.log(twoSum([4, 5, 1, 3, 8], 11))
 
 /*-----------------------------------------------------------------------------
 Challenge: 02 - compareTriplets
@@ -130,22 +105,8 @@ Result:
 -----------------------------------------------------------------------------*/
 // Your solution for 02- here:
 
-function compareTriplets(arrOne, arrTwo) {
-  let arrOneTotal = 0
-  let arrTwoTotal = 0
-  for (let i=0; i < arrOne.length; i++) {
-    if (arrOne[i] > arrTwo[i]) {
-      arrOneTotal += 1
 
-    }
-    else if (arrOne[i] < arrTwo[i]) {
-      arrTwoTotal += 1
-    }
-  }
-  return [arrOneTotal, arrTwoTotal]
-}
 
-// console.log(compareTriplets([13,33,56], [12,53,65]))
 
 /*-----------------------------------------------------------------------------
 
@@ -198,24 +159,8 @@ Difference: |4 - 19| = 15
 -----------------------------------------------------------------------------*/
 // Your solution for 03- here:
 
-function diagonalDifference(array) {
-  let first = 0
-  let second = 0
-  for (let i = 0; i < array[0].length; i++) {
-    first += array[i][i]
-    second += array[i][array[0].length - (i + 1)]
-  }
-  return Math.abs(first - second)
-}
 
-// console.log(diagonalDifference([
-//   [1, 2, 3, 4],
-//   [2, 5, 7, 6],
-//   [6, 1, 2, 7],
-//   [1, 1, 1, 1]
-// ]))
 
-// Expected |9-13| = 4
 
 /*-----------------------------------------------------------------------------
 Challenge: 04 - plusMinus
@@ -236,25 +181,8 @@ The function plusMinus should return an array like this:
 -----------------------------------------------------------------------------*/
 // Your solution for 04- here:
 
-function plusMinus(array) {
-  let p=0
-  let n=0
-  let z=0
-  for (let i =0; i<array.length; i++){
-    if (array[i]>0){
-      p++
-    }
-    if (array[i]<0){
-      n++
-    }
-    if (array[i] === 0){
-      z++
-    }
-  }
-return [(p/array.length).toFixed(6), (n/array.length).toFixed(6), (z/array.length).toFixed(6)]
-}
 
-// console.log(plusMinus([1,1,0,-1,-1]))
+
 
 /*-----------------------------------------------------------------------------
 Challenge: 05 - staircase
@@ -305,15 +233,9 @@ The staircase is right-aligned, composed of # symbols and spaces, and has a heig
 -----------------------------------------------------------------------------*/
 // Your solution for 05- here:
 
-function staircase(num) {
-  let output = []
-  for (let i=1; i <= num; i++) {
-    output.push(' '.repeat(num-i) + '#'.repeat(i))
-  }
-  return output
-}
 
-// console.log(staircase(30))
+
+
 
 /*-----------------------------------------------------------------------------
 Challenge: 06 - miniMaxSum
@@ -348,44 +270,11 @@ Sum everything except 5, the sum is 10.
 
 -----------------------------------------------------------------------------*/
 // Your solution for 06- here:
-// Optimal:
-function miniMaxSum(array) {
-  let minNum = Math.min(...array)
-  let maxNum = Math.max(...array)
-  let sum = 0
-  array.forEach(num => {
-    sum += num
-  })
-  return [sum-maxNum, sum-minNum] 
-}
 
 
-// function miniMaxSum(array) {
-//   let withOutFive = array[0] + array[1] + array[2] + array[3];
-//   let withOutFour = array[0] + array[1] + array[2] + array[4];
-//   let withOutThree = array[0] + array[1] + array[3] + array[4];
-//   let withOutTwo = array[0] + array[2] + array[3] + array[4];
-//   let withOutOne = array[4] + array[1] + array[2] + array[3];
 
-//   let longArray = [withOutFive, withOutFour, withOutThree, withOutTwo, withOutOne];
-//   return [Math.min(...longArray), Math.max(...longArray)]
-// }
 
-// function miniMaxSum(arr) {
-//   let max = -Infinity;
-//   let min = Infinity;
-//   for (let i = 0; i < arr.length; i++) {
-//     let sum = 0;
-//     for (let j = 0; j < arr.length; j++) {
-//       if ( i != j ) {
-//         sum += arr[j];
-//       }
-//     }
-//     if (sum < min) min = sum;
-//     if (sum > max) max = sum;
-//   }
-//   return [min, max]
-// } 
+
 
 /*-----------------------------------------------------------------------------
 Challenge: 07 - birthdayCakeCandles
@@ -417,24 +306,10 @@ Candle heights are 3, 2, 1, and 3. The tallest candles are 3 units, and there ar
 -----------------------------------------------------------------------------*/
 // Your solution for 07- here:
 
-function birthdayCakeCandles(arr) {
-  let canHeight = Math.max(...arr)
-  let numTallest = arr.filter(c => c === canHeight)
-  return numTallest.length
-}
 
-// function birthdayCakeCandles(arr){
-//   let maxcount = 0
-//   let num = Math.max(...arr)
-//   for (let i =0;i < arr.length;i++){
-//     if(arr[i] === num) {
-//       maxcount+= 1
-//     }
-//   }
-//   return maxcount
-// }
 
-// console.log(birthdayCakeCandles([4,4,1,3]));
+
+
 
 /*-----------------------------------------------------------------------------
 Challenge: 08 - timeConversion
@@ -459,26 +334,10 @@ Result: '19:05:45'
 -----------------------------------------------------------------------------*/
 // Your solution for 08- here:
 
-function timeConversion(time){
-  // determine AM or PM
-  let hours = (time.slice(0, 2))
-  let minutesSeconds = time.slice(2, 8)
-  let ampm = time.slice(-2)
-  // determine hour
-  // if PM return 12 + hour w/ minutes, seconds.
-    if (ampm === "PM"){
-      return (parseInt(hours) + 12+minutesSeconds)
-    } else if (ampm == "AM" && parseInt(hours) < 12) {
-      return (hours+minutesSeconds)
-      // if AM and hour < 12 return hours, minutes, seconds.
-    } else {
-      return `00${minutesSeconds}` 
-    }
-  // edge case: 12AM change hour to 00
-  // console.log(hours, minutesSeconds, ampm)
-}
 
-// timeConversion('07:05:45PM')
+
+
+
 
 /*-----------------------------------------------------------------------------
 Challenge: 09 - gradingStudents
@@ -518,6 +377,9 @@ Student 3 received a 38, and the next multiple of 5 from 38 is 40. Since 40 - 38
 Student 4 received a grade below 38, so the grade will not be modified and the student's final grade is 33.
 -----------------------------------------------------------------------------*/
 // Your solution for 09- here:
+
+
+
 
 
 /*-----------------------------------------------------------------------------
@@ -570,6 +432,9 @@ The second kangaroo has a starting location that is ahead (further along the num
 
 
 
+
+
+
 /*-----------------------------------------------------------------------------
 Challenge: 11 - breakingRecords
 
@@ -612,22 +477,3 @@ She broke her best record four times and her worst record zero times (no score d
 -----------------------------------------------------------------------------*/
 // Your solution for 11- here:
 
-function kangaroo(x1, v1, x2, v2) {
-  if ((v1 > v2 && x1 > x2) || (v2 > v1 && x2 > x1) || (v2 === v1 && x1 !== x2)) {
-    return 'NO'
-  } else if (x1 === x2) {
-    return 'YES'
-  } else {
-    let aheadKangarooX = x1 > x2 ? x1 : x2
-    let aheadKangrooV = x1 > x2 ? v1 : v2
-    let behindKangarooX = x1 < x2 ? x1 : x2
-    let behindKangarooV = x1 < x2 ? v1 : v2
-    let intersected = false
-    while (intersected === false && aheadKangarooX > behindKangarooX) {
-      aheadKangarooX += aheadKangrooV
-      behindKangarooX += behindKangarooV
-      if (aheadKangarooX === behindKangarooX) intersected = true
-    }
-    return intersected ? 'YES' : 'NO'
-  }
-}
