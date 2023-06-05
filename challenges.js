@@ -191,53 +191,33 @@ timeConversion('07:05:45PM') //=> '19:05:45'
 -----------------------------------------------------------------------------*/
 // Your solution for 07- here:
 
-function timeConversion(){
-  
-}
-
-
 
 /*-----------------------------------------------------------------------------
 Challenge: 08 - gradingStudents
 
 Difficulty - Easy
 
+Prompt: 
+
 HackerLand University has the following grading policy:
 
-Every student receives a grade in the inclusive range from 1 to 100.
-Any  less than 40 is a failing grade.
-Sam is a professor at the university and likes to round each student's grade according to these rules:
+- Write a function named gradingStudents that accepts an array of scores and returns the rounded grades.
+- Every student receives a grade in the inclusive range of 1 to 100.
+- A score of 40 or lower is a failing grade.
+- If the difference between the grade and the next multiple of 5 is less than 3, round grade up to the next multiple of 5.
+- If the value of grade is less than 38, no rounding occurs as the result will still be a failing grade.
 
-If the difference between the grade and the next multiple of 5 is less than 3, round grade up to the next multiple of 5.
-If the value of grade is less than 38, no rounding occurs as the result will still be a failing grade.
+Examples:
 
-Examples
+A grade of 84 rounds to 85 (85 - 84 is less than 3)
+A grade of 29 does not round (result is less than 38)
+A grade of 57 does not round (60 - 57 is 3 or higher)
 
-grade = 84 rounds to 85 (85 - 84 is less than 3)
-grade = 29 do not round (result is less than 38)
-grade = 57 do not round (60 - 57 is 3 or higher)
+gradingStudents([73,67,38,33]) //=> [75,67,40,33]
 
-Given the initial value of grades for each of Sam's students, write a function named gradingStudents to return the rounded grades.
 
-Sample Input 
-
-[73,67,38,33]
-
-Sample Output 
-
-[75,67,40,33]
-
-Explanation
-
-Student 1 received a 73, and the next multiple of 5 from 73 is 75. Since 75 - 73 < 3, the student's grade is rounded to 75.
-Student 2 received a 67, and the next multiple of 5 from 67 is 70. Since 70 - 67 = 3, the grade will not be modified and the student's final grade is 67.
-Student 3 received a 38, and the next multiple of 5 from 38 is 40. Since 40 - 38 < 3, the student's grade will be rounded to 40.
-Student 4 received a grade below 38, so the grade will not be modified and the student's final grade is 33.
 -----------------------------------------------------------------------------*/
 // Your solution for 08- here:
-
-
-
 
 
 /*-----------------------------------------------------------------------------
@@ -287,10 +267,6 @@ The second kangaroo has a starting location that is ahead (further along the num
 
 -----------------------------------------------------------------------------*/
 // Your solution for 09- here:
-
-
-
-
 
 
 /*-----------------------------------------------------------------------------
