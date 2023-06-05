@@ -100,16 +100,19 @@ Challenge: 04 - plusMinus
 
 Difficulty - Easy
 
-Given an array of integers, calculate the ratios of its elements that are positive, negative, and zero. Create an array to hold the decimal value of each fraction, accurate to 6 places after the decimal.
+Prompt:
 
-Example
-arr = [1,1,0,-1,-1]
+- Write a function called plusMinus that accepts an array of numbers and returns an array of
+  the ratios of its elements that are positive, negative, and zero.
+- The ratios should be represented as the decimal value of each fraction, accurate to 6 places
+  after the decimal
 
-There are 5 elements, two positive, two negative and one zero. Their ratios are 2/5 (0.400000), 2/5 (0.400000), and 1/5 (0.200000).
+Example:
 
-The function plusMinus should return an array like this:
+plusMinus([1,1,0,-1,-1]) //=> [0.400000, 0.400000, 0.200000]
 
-[0.400000, 0.400000, 0.200000]
+There are 5 elements, two positive, two negative and one zero. 
+Their ratios are 2/5 (0.400000), 2/5 (0.400000), and 1/5 (0.200000).
 
 -----------------------------------------------------------------------------*/
 // Your solution for 04- here:
