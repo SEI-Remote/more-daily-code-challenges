@@ -296,3 +296,8 @@ body {
 .jasmine_html-reporter .jasmine-debug-log table, .jasmine_html-reporter .jasmine-debug-log th, .jasmine_html-reporter .jasmine-debug-log td {
   border: 1px solid #ddd;
 }
+
+h1 {
+  display: flex;
+  align-items: center;
+}
