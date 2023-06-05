@@ -165,11 +165,12 @@ body {
   color: #333;
 }
 .jasmine_html-reporter .jasmine-bar.jasmine-menu {
-  background-color: #fff;
-  color: #000;
+  color: #333; 
+  font-size: large; 
+  font-weight: bold;
 }
 .jasmine_html-reporter .jasmine-bar.jasmine-menu a {
-  color: blue;
+  color: #55f;
   text-decoration: underline;
 }
 .jasmine_html-reporter .jasmine-bar a {

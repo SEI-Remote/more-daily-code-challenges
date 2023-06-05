@@ -118,7 +118,7 @@ describe("9-kangaroo", function() {
   it("works for one kangaroo significantly out-hopping the other", function() {
     expect(kangaroo(1,5,4,3)).toEqual('NO')
   })
-  it("kangaroos that will meet", function() {
+  it("works for kangaroos that will meet", function() {
     expect(kangaroo(1,5,5,3)).toEqual('YES')
   })
 })
