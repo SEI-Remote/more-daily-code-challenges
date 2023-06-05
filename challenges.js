@@ -103,21 +103,19 @@ Difficulty - Easy
 Prompt:
 
 - Write a function called plusMinus that accepts an array of numbers and returns an array of
-  the ratios of its elements that are positive, negative, and zero.
+  the ratios of its elements that are positive, negative, and zero (as strings).
 - The ratios should be represented as the decimal value of each fraction, accurate to 6 places
-  after the decimal
+  after the decimal. 
 
 Example:
 
-plusMinus([1,1,0,-1,-1]) //=> [0.400000, 0.400000, 0.200000]
+plusMinus([1,1,0,-1,-1]) //=> ['0.400000', '0.400000', '0.200000']
 
 There are 5 elements, two positive, two negative and one zero. 
 Their ratios are 2/5 (0.400000), 2/5 (0.400000), and 1/5 (0.200000).
 
 -----------------------------------------------------------------------------*/
 // Your solution for 04- here:
-
-
 
 
 /*-----------------------------------------------------------------------------
