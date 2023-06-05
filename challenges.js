@@ -497,6 +497,8 @@ addChecker( [10, 15, 16, 22], 19 ) // => false
 -----------------------------------------------------------------------------*/
 // Your solution for 18-addChecker here:
 
+
+
 /*-----------------------------------------------------------------------------
 Challenge: 19-Snail
 
@@ -523,27 +525,6 @@ snail(array) //=> [1,2,3,4,5,6,7,8,9]
 -----------------------------------------------------------------------------*/
 // Your solution for 19- here:
 
-const snail = function(array) {
-  const acc = []
-  while(array.length){
-    let bottom = array.reduce((prev, subArray, idx) => {
-      if(idx === 0){
-        prev[0].push(...subArray)
-      } else if(idx === array.length - 1){
-        prev[2].push(...subArray.reverse())
-      } else {
-        prev[3].unshift(...subArray.splice(0, 1))
-        prev[1].push(...subArray.splice(-1, 1))
-      }
-      return prev
-    }, [[], [], [], []])
-
-    acc.push(...bottom.flat())
-    array.shift()
-    array.pop()
-  }
-  return acc
-}
 
 /*-----------------------------------------------------------------------------
 Challenge: 20-totalTaskTime
