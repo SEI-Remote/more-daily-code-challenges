@@ -8,6 +8,9 @@ describe("01-twoSum", function() {
   it("works with negative numbers", function() {
     expect(twoSum([-3, -2, 1, 4, 9], 7)).toEqual([1, 4])
   })
+  it("does not accept duplicates", function() {
+    expect(twoSum([8, 5, 1, 3, 9], 16)).toEqual('No Sum')
+  })
 })
 
 describe("02-compareTriplets", function() {
