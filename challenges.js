@@ -67,16 +67,19 @@ compareTriplets([17, 28, 30], [99, 16, 8]) //=> [2, 1]
 
 
 
-
 /*-----------------------------------------------------------------------------
 
 Challenge: 03 - diagonalDifference
 
 Difficulty - Easy
 
-Given a square 2D matrix, calculate the absolute difference between the sums of its diagonals.
+Prompt:
 
-For example, the square matrix  is shown below:
+- Write a function called diagonalDifference that accepts an array of 
+  three arrays (a square 2D matrix) and returns the absolute difference 
+  between the sum of its diagonals. 
+
+Given the square matrix below:
 
 [[1,2,3],
 [4,5,6],
@@ -84,42 +87,12 @@ For example, the square matrix  is shown below:
 
 The left-to-right diagonal = 1 + 5 + 9 = 15. The right to left diagonal = 3 + 5 + 9 = 17. Their absolute difference is |15-17| = 2.
 
-Function description
+Example:
 
-Write a function named diagonalDifference that accepts an array.
+diagonalDifference([[11,2,4], [4,5,6], [10,8,-12]]) // => 15
 
-Return the absolute difference between the sums of the matrix's two diagonals as a single integer.
-
-Sample Input
-
-[[11,2,4],
-[4,5,6],
-[10,8,-12]]
-
-Sample Output
-
-15
-
-Explanation
-
-The primary diagonal is:
-
-11
-  5
-    -12
-Sum across the primary diagonal: 11 + 5 - 12 = 4
-
-The secondary diagonal is:
-
-    4
-  5
-10
-Sum across the secondary diagonal: 4 + 5 + 10 = 19
-Difference: |4 - 19| = 15
 -----------------------------------------------------------------------------*/
 // Your solution for 03- here:
-
-
 
 
 /*-----------------------------------------------------------------------------
