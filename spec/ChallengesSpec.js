@@ -74,16 +74,7 @@ describe("06-miniMaxSum", function() {
 })
 
 
-describe("07-birthdayCakeCandles", function() {
-  it("returns an integer", function() {
-    expect(typeof birthdayCakeCandles([3,2,1,3])).toBe('number')
-  })
-  it("returns correct result", function() {
-    expect(birthdayCakeCandles([3,2,1,3,3])).toEqual(3)
-  })
-})
-
-describe("08-timeConversion", function() {
+describe("07-timeConversion", function() {
   it("works with 12AM edge case", function() {
     expect(timeConversion('12:01:01AM')).toEqual('00:01:01')
   })
@@ -95,7 +86,7 @@ describe("08-timeConversion", function() {
   })
 })
 
-describe("09-gradingStudents", function() {
+describe("08-gradingStudents", function() {
   it("works for grades lower than 38", function() {
     expect(gradingStudents([33])).toEqual([33])
   })
@@ -111,7 +102,7 @@ describe("09-gradingStudents", function() {
 })
 
 
-describe("10-kangaroo", function() {
+describe("9-kangaroo", function() {
   it("works for a faster kangaroo already ahead", function() {
     expect(kangaroo(5,3,4,2)).toEqual('NO')
   })
@@ -132,7 +123,7 @@ describe("10-kangaroo", function() {
   })
 })
 
-describe("11-breakingRecords", function() {
+describe("10-breakingRecords", function() {
   it("returns correct result", function() {
     expect(breakingRecords([3,4,21,36,10,28,35,5,24,42])).toEqual([4,0])
     expect(breakingRecords([10,5,20,20,4,5,2,25,1])).toEqual([2,4])

@@ -11,18 +11,11 @@ Prompt:
 - You may not use the same element twice, and if no two numbers add up to the 
   target, return the string 'No Sum'
 
-Example 1:
-Input: nums = [2,7,11,15], target = 9
-Output: [0,1]
-Output: Because nums[0] + nums[1] == 9, we return [0, 1].
+Examples:
 
-Example 2:
-Input: nums = [3,2,4], target = 6
-Output: [1,2]
-
-Example 3:
-Input: nums = [8,7], target = 16
-Output: 'No Sum'
+twoSum([2,7,11,15], 9) //=> [0,1]
+twoSum([3,2,4], 6) //=> [1,2]
+twoSum([8,7], 16) //=> 'No Sum'
 
 -----------------------------------------------------------------------------*/
 // Your solution for 01- here:
@@ -143,7 +136,6 @@ Its base and height are both equal to n. It is drawn using # symbols and spaces.
 Example: 
 
 staircase(6) // =>  
-
 [
 '     #',
 '    ##',
@@ -162,105 +154,51 @@ Challenge: 06 - miniMaxSum
 
 Difficulty - Easy
 
-Given five positive integers, find the minimum and maximum values that can be calculated by summing exactly four of the five integers. Then print the respective minimum and maximum values within an array.
+Prompt:
 
-Example:
-arr = [1,3,5,7,9]
+- Write a function called miniMaxSum that accepts an array of positive numbers and returns
+  the minimum and maximum values that can be calculated by summing exactly four of the five numbers
+- Return the minimum and maximum within an array
 
-The minimum sum is 1 + 3 + 5 + 7 = 16 and the maximum sum is 3 + 5 + 7 + 9 = 24 . The function returns [16,24].
+Examples:
+miniMaxSum([1,3,5,7,9]) //=> [16,24]
+miniMaxSum([1,2,3,4,5]) //=> [10,14]
 
-Input Format:
-An array of 5 integers.
-
-Sample Input
-[1,2,3,4,5]
-
-Sample Output
-[10,14]
-
-Explanation
-
-The numbers are 1, 2, 3, 4, and 5. Calculate the following sums using four of the five integers:
-
-Sum everything except 1, the sum is 14.
-Sum everything except 2, the sum is 13.
-Sum everything except 3, the sum is 12.
-Sum everything except 4, the sum is 11.
-Sum everything except 5, the sum is 10.
 
 -----------------------------------------------------------------------------*/
 // Your solution for 06- here:
 
 
 
-
-
-
 /*-----------------------------------------------------------------------------
-Challenge: 07 - birthdayCakeCandles
+Challenge: 07 - timeConversion
 
 Difficulty - Easy
 
-You are in charge of the cake for a child's birthday. You have decided the cake will have one candle for each year of their total age. They will only be able to blow out the tallest of the candles.  Write a function named birthdayCakeCandles that returns the count of tallest candles.
+Prompt:
 
-Example
+- Write a function called timeConversion that accepts a string (a time in 12-hour AM/PM format)
+  and returns the same time converted to military (24-hour) time. 
+- 12:00:00AM on a 12-hour clock is 00:00:00 on a 24-hour clock.
+- 12:00:00PM on a 12-hour clock is 12:00:00 on a 24-hour clock.
 
-[4,4,1,3]
 
-The maximum height candles are 4 units high. There are 2 of them, so return 2.
-
-Input Format
-
-An array of integers
-
-Sample Input
-[3,2,1,3]
-
-Sample Output
-2
-
-Explanation
-
-Candle heights are 3, 2, 1, and 3. The tallest candles are 3 units, and there are 2 of them.
+Examples:
+timeConversion('12:01:00PM') //=> '12:01:00'
+timeConversion('12:01:00AM') //=> '00:01:00'
+timeConversion('07:05:45PM') //=> '19:05:45'
 
 -----------------------------------------------------------------------------*/
 // Your solution for 07- here:
 
-
-
-
-
-
-/*-----------------------------------------------------------------------------
-Challenge: 08 - timeConversion
-
-Difficulty - Easy
-
-Given a time in 12-hour AM/PM format, write a function named timeConversion to convert it to military (24-hour) time.
-
-Note:
-- 12:00:00AM on a 12-hour clock is 00:00:00 on a 24-hour clock.
-- 12:00:00PM on a 12-hour clock is 12:00:00 on a 24-hour clock.
-
-Example
-s = '12:01:00PM'
-Result: '12:01:00'.
-
-s = '12:01:00AM'
-Result: '00:01:00'.
-
-s = '07:05:45PM'
-Result: '19:05:45'
------------------------------------------------------------------------------*/
-// Your solution for 08- here:
-
-
-
+function timeConversion(){
+  
+}
 
 
 
 /*-----------------------------------------------------------------------------
-Challenge: 09 - gradingStudents
+Challenge: 08 - gradingStudents
 
 Difficulty - Easy
 
@@ -296,14 +234,14 @@ Student 2 received a 67, and the next multiple of 5 from 67 is 70. Since 70 - 67
 Student 3 received a 38, and the next multiple of 5 from 38 is 40. Since 40 - 38 < 3, the student's grade will be rounded to 40.
 Student 4 received a grade below 38, so the grade will not be modified and the student's final grade is 33.
 -----------------------------------------------------------------------------*/
-// Your solution for 09- here:
+// Your solution for 08- here:
 
 
 
 
 
 /*-----------------------------------------------------------------------------
-Challenge: 10 - kangaroo
+Challenge: 09 - kangaroo
 
 Difficulty - Easy
 
@@ -348,7 +286,7 @@ Explanation 1
 The second kangaroo has a starting location that is ahead (further along the number line) of the first kangaroo's starting location (i.e., x2 > x1). Because the second kangaroo moves at a faster rate (meaning v2 > v1) and is already ahead of the first kangaroo, the first kangaroo will never be able to catch up. Thus, we print NO.
 
 -----------------------------------------------------------------------------*/
-// Your solution for 10- here:
+// Your solution for 09- here:
 
 
 
@@ -356,7 +294,7 @@ The second kangaroo has a starting location that is ahead (further along the num
 
 
 /*-----------------------------------------------------------------------------
-Challenge: 11 - breakingRecords
+Challenge: 10 - breakingRecords
 
 Difficulty - Medium
 
@@ -395,5 +333,5 @@ Explanation 1
 She broke her best record four times and her worst record zero times (no score during the season was lower than the one she earned during her first game), so we return [4,0] as our answer.
 
 -----------------------------------------------------------------------------*/
-// Your solution for 11- here:
+// Your solution for 10- here:
 
