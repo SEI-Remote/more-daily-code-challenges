@@ -123,6 +123,8 @@ Challenge: 05 - staircase
 
 Difficulty - Easy
 
+Prompt:
+
 This is a staircase of size n = 4:
 
 [
@@ -132,24 +134,15 @@ This is a staircase of size n = 4:
 '####',
 ]
 
-Its base and height are both equal to n. It is drawn using # symbols and spaces. The last line is not preceded by any spaces.
+Its base and height are both equal to n. It is drawn using # symbols and spaces. 
 
-Write a function named staircase that returns a staircase of size n.
+- Write a function called staircase that accepts a number (n) and returns a staircase of size n.
+- The starcase will be an array of strings.
+- The last line must have 0 spaces in it.
 
-Input Format
+Example: 
 
-A single integer n denoting the size of the staircase.
-
-Output Format
-
-Return an array containing a staircase of size n using # symbols and spaces.
-
-Note: The last line must have 0 spaces in it.
-
-Sample Input
-6 
-
-Sample Output
+staircase(6) // =>  
 
 [
 '     #',
@@ -160,15 +153,8 @@ Sample Output
 '######'
 ]
 
-Explanation
-
-The staircase is right-aligned, composed of # symbols and spaces, and has a height 6 and width of 6.
-
 -----------------------------------------------------------------------------*/
 // Your solution for 05- here:
-
-
-
 
 
 /*-----------------------------------------------------------------------------
