@@ -132,3 +132,30 @@ describe("10-breakingRecords", function() {
     expect(Array.isArray(breakingRecords([1,2,3,4,5]))).toBe(true)
   })
 })
+
+
+describe("11-flatten", function () {
+  it("returns a new array", function () {
+    var arr = [];
+    expect(flatten(arr)).not.toBe(arr);
+  });
+  it("flattens a nested array", function () {
+    expect(flatten([1, [2, 3]])).toEqual([1, 2, 3]);
+  });
+  it("flattens an array with deeply nested arrays", function () {
+    expect(flatten([1, [2, [3, [4]]], 1, 'a', ['b', 'c']])).toEqual([1, 2, 3, 4, 1, 'a', 'b', 'c']);
+  });
+});
+
+describe("12-balancedBrackets", function () {
+  it("returns false when not balanced", function () {
+    expect(balancedBrackets('(]')).toBe(false);
+    expect(balancedBrackets('[(])')).toBe(false);
+  });
+  it("returns true when balanced", function () {
+    expect(balancedBrackets('()')).toBe(true);
+    expect(balancedBrackets('[{}]')).toBe(true);
+    expect(balancedBrackets('[({}[])]')).toBe(true);
+  });
+});
+

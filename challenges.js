@@ -284,3 +284,63 @@ breakingRecords([3,4,21,36,10,28,35,5,24,42]) //=> [4,0]
 -----------------------------------------------------------------------------*/
 // Your solution for 10- here:
 
+
+
+/*-----------------------------------------------------------------------------
+Challenge: 11-flatten
+
+Difficulty: Intermediate
+
+Prompt:
+
+- Write a function named flatten that accepts a single array that may 
+  contain nested arrays and returns a new "flattened" array.
+- A flattened array is an array that contains no nested arrays.
+- Arrays may be nested at any level.
+- If any of the arrays have duplicate values, those duplicate values 
+  should be present in the returned array.
+- The values in the new array should maintain their ordering, 
+  as shown in the examples below.
+
+Hint:
+
+- This assignment provides an excellent opportunity to use recursion 
+  (a function that calls itself). You can also solve it by using an inner function.
+
+Examples:
+
+flatten( [1, [2, 3]] );
+//=> [1, 2, 3] (a new array) 
+
+flatten( [1, [2, [3, [4]]], 1, 'a', ['b', 'c']] );
+//=> [1, 2, 3, 4, 1, 'a', 'b', 'c']
+
+-----------------------------------------------------------------------------*/
+// Your solution for 11-flatten here:
+
+
+
+/*-----------------------------------------------------------------------------
+Challenge: 12-balancedBrackets
+
+Difficulty: Intermediate
+
+Prompt:
+
+- Write a function called balancedBrackets that accepts a single string as an argument.
+- The input string is composed entirely of parentheses, brackets, or curly braces, i.e., (), [], or {}. Referred to as "braces" from this point forward.
+- The balancedBrackets function should return true if the string's braces are "balanced" and false if they are not.
+- The brackets are considered unbalanced if any closing bracket does not close the same type of opening bracket, ignoring already matched brackets between them. These examples may explain it best:
+
+Examples:
+
+balancedBrackets( '()' ) // => true
+balancedBrackets( '(]' ) // => false
+balancedBrackets( '[{}]' ) // => true
+balancedBrackets( '[(])' ) // => false
+balancedBrackets( '[({}[])]' ) // => true
+-----------------------------------------------------------------------------*/
+// Your solution for 12-balancedBrackets here:
+
+
+
