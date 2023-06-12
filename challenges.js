@@ -266,7 +266,7 @@ Scores are in the same order as the games played. She tabulates her results as f
      3      24     10       24       1   1
 - Write a function named breakingRecords that accepts an array of scores, and return
   number of times Maria breaks her records for most and least points scored during the season.
-- The function should return an array in the shape of [min, max]  
+- The function should return an array in the shape of [max, min]  
 
 breakingRecords([10,5,20,20,4,5,2,25,1]) //=> [2,4]
 breakingRecords([3,4,21,36,10,28,35,5,24,42]) //=> [4,0]
