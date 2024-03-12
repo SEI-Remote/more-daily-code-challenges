@@ -92,10 +92,8 @@ Difficulty - Easy
 
 Prompt:
 
-- Write a function called plusMinus that accepts an array of numbers and returns an array of
-  the ratios of its elements that are positive, negative, and zero (as strings).
-- The ratios should be represented as the decimal value of each fraction, accurate to 6 places
-  after the decimal. 
+- Write a function called plusMinus that accepts an array of numbers and returns an array of the ratios of its elements that are positive, negative, and zero (as strings).
+- The ratios should be represented as the decimal value of each fraction, accurate to 6 places after the decimal. 
 
 Example:
 
@@ -152,8 +150,7 @@ Difficulty - Easy
 
 Prompt:
 
-- Write a function called miniMaxSum that accepts an array of positive numbers and returns
-  the minimum and maximum values that can be calculated by summing exactly four of the five numbers
+- Write a function called miniMaxSum that accepts an array of positive numbers and returns the minimum and maximum values that can be calculated by summing exactly four of the five numbers
 - Return the minimum and maximum within an array
 
 Examples:
@@ -171,8 +168,7 @@ Difficulty - Easy
 
 Prompt:
 
-- Write a function called timeConversion that accepts a string (a time in 12-hour AM/PM format)
-  and returns the same time converted to military (24-hour) time. 
+- Write a function called timeConversion that accepts a string (a time in 12-hour AM/PM format) and returns the same time converted to military (24-hour) time. 
 - 12:00:00AM on a 12-hour clock is 00:00:00 on a 24-hour clock.
 - 12:00:00PM on a 12-hour clock is 12:00:00 on a 24-hour clock.
 
@@ -219,13 +215,11 @@ Difficulty - Easy
 
 Prompt: 
 
-You are choreographing a circus show with various animals. For one act, you are given two kangaroos
-on a number line ready to jump in the positive direction (i.e, toward positive infinity).
+You are choreographing a circus show with various animals. For one act, you are given two kangaroos on a number line ready to jump in the positive direction (i.e, toward positive infinity).
 
 The first kangaroo starts at location x1 and moves at a rate of v1 meters per jump.
 The second kangaroo starts at location x2 and moves at a rate of v2 meters per jump.
-You have to figure out a way to get both kangaroos at the same location at the same time 
-as part of the show. If it is possible, return YES, otherwise return NO.
+You have to figure out a way to get both kangaroos at the same location at the same time as part of the show. If it is possible, return YES, otherwise return NO.
 
 Examples:
 
@@ -233,14 +227,11 @@ kangaroo(0,3,4,2) //=> 'YES'
 The two kangaroos jump through the following sequence of locations:
 k1 (0, 3, 6, 9, 12)
 k2 (4, 6, 8, 10, 12)
-It is clear that the kangaroos meet at the same location (number 12 on the number line) 
-after same number of jumps (4 jumps), so we print YES.
+It is clear that the kangaroos meet at the same location (number 12 on the number line) after same number of jumps (4 jumps), so we print YES.
 
 kangaroo(0,2,5,3) //=> 'NO
-The second kangaroo has a starting location that is ahead (further along the number line) 
-of the first kangaroo's starting location (i.e., x2 > x1). 
-Because the second kangaroo moves at a faster rate (meaning v2 > v1) and is already ahead 
-of the first kangaroo, the first kangaroo will never be able to catch up. Thus, we print NO.
+The second kangaroo has a starting location that is ahead (further along the number line) of the first kangaroo's starting location (i.e., x2 > x1). 
+Because the second kangaroo moves at a faster rate (meaning v2 > v1) and is already ahead of the first kangaroo, the first kangaroo will never be able to catch up. Thus, we print NO.
 -----------------------------------------------------------------------------*/
 // Your solution for 09- here:
 
