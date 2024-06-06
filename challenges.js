@@ -6,7 +6,7 @@ Difficulty - Easy
 Prompt:
 
 - Write a function called twoSum that takes an array of numbers and a target number
-  and returns the indeces of the two numbers in the array that add up to the target. 
+  and returns the indices of the two numbers in the array that add up to the target. 
 - Indices must be returned in the same relative order they appear within the array
 - You may not use the same element twice, and if no two numbers add up to the 
   target, return the string 'No Sum'
