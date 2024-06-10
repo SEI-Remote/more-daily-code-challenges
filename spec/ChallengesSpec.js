@@ -84,6 +84,9 @@ describe("07-timeConversion", function() {
   it("works for PM case", function() {
     expect(timeConversion('10:01:01PM')).toEqual('22:01:01')
   })
+  it("works for 12PM edge case", function() {
+    expect(timeConversion('12:01:01PM')).toEqual('12:01:01')
+  })
 })
 
 describe("08-gradingStudents", function() {
